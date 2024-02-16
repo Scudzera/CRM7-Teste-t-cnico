@@ -1,8 +1,8 @@
-import {AccountSchema} from "../schema/schema-accounts.js";
+import { AccountSchema } from "../schema/schema-accounts.js";
 
 export class RepositoryAccount {
     async create(data) {
-        return await AccountSchema.create({data});
+        return await AccountSchema.create({ data });
     }
 
     async delete(id) {
@@ -15,5 +15,9 @@ export class RepositoryAccount {
 
     async findAll() {
         return await AccountSchema.find();
+    }
+
+    async update(id) {
+        return await AccountSchema.update({ _id: id });
     }
 }
